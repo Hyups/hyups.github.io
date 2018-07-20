@@ -1,0 +1,175 @@
+/* Font */
+@import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
+
+* { margin:0; padding:0; box-sizing:border-box; color:#fff; font-size:16px; font-family:'Noto Sans KR','Malgun Gothic','맑은고딕','돋움','dotum'; }
+html , body { width:100%; }
+#wrap , header , section { width:100%; }
+section { padding:150px 0; }
+.container { width:1140px; margin:0 auto; }
+.main_color { color:#0071ce; } 
+/* ------------------ All ------------------ */
+
+a { text-decoration: none; }
+li { list-style:none; }
+.fl { float: left;	}
+.fr { float: right; }
+button { border:0; background:none; display: block; cursor:pointer; outline:none; transition:all .2s; }
+button:hover { box-shadow:10px 15px 20px 0 rgba(0,0,0,.3);}
+.tal { text-align:left;	}
+.tac { text-align:center;	}
+.tar { text-align:right;	}
+.hlc { color:#0071ce; font-size:100%; }
+.m0auto { margin:0 auto; display: block;}
+
+/* Same Class */
+.animation .hero-title , .animation .hero-info { opacity:0; position: relative; left:-50px;}
+.hero-title { font-size:4em; font-weight:bold;}
+.hero-info { font-size:1.1em; margin-top:30px; line-height:28px; padding-left:5px; }
+
+.btns { width:240px; height:70px; border-radius:50px; background:#0071ce; font-weight:bold; font-size:1.1em; margin-top:30px;}
+.btns2 { width:240px; height:70px; border-radius:50px; border:2px solid #0071ce; color:#0071ce; font-weight:bold; font-size:1.1em; margin-top:30px;}
+.btns2:hover { background:#0071ce; color:#fff;}
+.cl { display: block; clear: both;}
+
+
+/* ------------------ Header ------------------ */
+
+/* Header */
+header { height:88px;  position: absolute; top:10px; z-index:999; transition:all .2s; }
+header h1.logo a { line-height:88px; font-size:2.3em; 	}
+
+header nav ul.gnb li { float: left; }
+header nav ul.gnb li a { padding:0 15px; line-height:88px; font-size:0.95em; display: block;}
+
+/* fixed */
+header.fixed { position: fixed; background:#fff; box-shadow:1px 1px 4px 0 rgba(0,0,0,.2); top:0px; }
+header.fixed * { color:#333; }
+header.fixed h1.logo a { color:#0071ce; font-size:2em; }
+
+
+
+/* ------------------ Section ------------------ */
+
+/* Main */
+/*#main { height:100vh; background:url("http://pay.playauto.co.kr/wp/wp-content/themes/twentyseventeen/assets/images/header.jpg")center no-repeat; background-size:cover; position: relative;}*/
+#main { height:100%; background:url("../images/us.jpg")center; background-size:cover; position: relative;}
+#main .container { position: relative; z-index:2;}
+.cover { width:100%; height:100%; background:rgba(0,0,0,.26); position: absolute; top:0; left:0;}
+#main .hero-title { margin-top:100px; text-shadow:1px 2px 5px rgba(0,0,0,.6)}
+
+/* intro */
+#intro { background:#f9f9f9; position: relative;}
+#intro .hero-title { color:#555;  }
+#intro .hero-info { color:#555; }
+#intro .macbook_img { display: block; margin:0 auto; padding-top:50px;}
+
+#intro .in_shop { position: absolute; left:0; right:6px; top:192px; bottom:0; margin:auto; }
+
+/* pay */
+#pay { position: relative;}
+#pay .hero-title { color:#555; }
+#pay .hero-info { color:#555; }
+
+/* emp + pay */
+#emp_pay { position: relative; background:#f9f9f9;}
+#emp_pay .hero-title { color:#555; }
+#emp_pay .hero-info { color:#555; }
+.emp_pay { padding-top:50px;}
+.emp_pay span{ line-height:350px;  }
+
+
+/* admin */
+#admin {  position: relative;}
+#admin .hero-title { color:#555; }
+#admin .hero-info { color:#555; }
+#admin .macbook_img { display: block; margin:0 auto; padding-top:50px;}
+
+#admin .in_shop { position: absolute; left:0; right:6px; top:192px; bottom:0; margin:auto;}
+
+/* shop_list */
+#shop_list { position: relative; background:#f9f9f9; }
+#shop_list .hero-title { color:#555; }
+#shop_list .hero-info { color:#555; }
+
+
+
+/* ------------------ Footer ------------------ */
+
+
+/* Footer */
+footer { background:#666; padding:40px 0; }
+footer .footer_logo { font-size:2.2em; float: left; margin-right:10px;}
+footer .footer_nav { float: left; padding-top:17px;}
+footer .footer_nav li { float: left;}
+footer .footer_nav li a { padding:0 10px;  font-weight: bold; transition:all .2s;}
+footer .footer_nav li a:hover { opacity:0.8; }
+
+.company_info { padding-top:25px; }
+.company_info p { font-size:0.9em; color:#ccc; line-height:25px;}
+.company_info p.default { font-size:0.9em; color:#fff;}
+
+.copyright { padding-top:30px; }
+.copyright p { font-size:0.9em; color:#ccc;}
+
+.shop { width:100%; padding-top:50px; overflow: hidden; height:auto; }
+.shop > li { width:33.333%; padding:10px; float:left; }
+.shop > li > .show_shop { width:100%; position: relative;}
+.shop > li > .show_shop img { border:1px solid #ddd; transition:opacity .2s; }
+.shop > li > .show_shop img:hover { opacity:0.8;}
+.shop > li > .show_shop .shop_name { color:#333; text-align: center; padding:10px 0 5px; font-size:1.2em; font-weight:bold; }
+.shop > li > .show_shop a.site_url { color:#999; text-align: center; display:block; margin-bottom:40px; transition:color .2s; }
+.shop > li > .show_shop a.site_url:hover { color:#0071ce; }
+.shop > li > .show_shop .shop_link { display: block; height:203px; }
+
+
+@media ( max-width: 768px ) {
+    header { background: #ffffff; top:0; height:60px; position:static;}
+    header h1.logo a { font-size:1.5em; color:#666; line-height:60px;}
+    section { padding:100px 0;}
+    #main .hero-title {font-size:30px; margin-top:0; text-align: center; opacity:.8;}
+    .btns { width:145px; height:50px; font-size:14px; margin:30px auto;}
+    .btns2 { width:145px; height:50px; font-size:14px;}
+    .container { width:90%; height:100%;}
+    .cover { height:100%; }
+    #main {background-size: cover; height:450px; padding-top:100px}
+
+    /* intro */
+    #intro { background:#f9f9f9; position: relative;}
+    #intro .hero-title { color:#555;  font-size:30px; }
+    #intro .hero-info { color:#555; font-size:14px; line-height:22px; }
+    #intro .macbook_img { display: block; margin:0 auto; padding-top:50px;}
+
+    #intro .in_shop { position: absolute; left:0; right:6px; top:192px; bottom:0; margin:auto; }
+
+    /* pay */
+    #pay { position: relative;}
+    #pay .hero-title { color:#555; font-size:30px; }
+    #pay .hero-info { color:#555; font-size:14px; line-height:22px;}
+
+    /* emp + pay */
+    #emp_pay { position: relative; background:#f9f9f9;}
+    #emp_pay .hero-title { color:#555; font-size:30px; }
+    #emp_pay .hero-info { color:#555; font-size:14px; line-height:22px;}
+    .emp_pay { padding-top:50px;}
+    .emp_pay span{ line-height:350px;  }
+
+
+    /* admin */
+    #admin {  position: relative;}
+    #admin .hero-title { color:#555; font-size:30px; }
+    #admin .hero-info { color:#555; font-size:14px; line-height:22px;}
+
+    #admin .in_shop { position: absolute; left:0; right:6px; top:192px; bottom:0; margin:auto;}
+
+    /* shop_list */
+    #shop_list { position: relative; background:#f9f9f9; }
+    #shop_list .hero-title { color:#555; font-size:30px; }
+    #shop_list .hero-info { color:#555; font-size:14px; line-height:22px;}
+
+    footer { padding:20px 0;}
+    footer p {font-size:12px}
+  }
+
+
+
+

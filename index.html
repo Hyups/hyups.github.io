@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/angular/angular.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Hyups github Page</title>
+</head>
+<body ng-controller="AppController">
+	<!-- Wrap -->
+	<div id="wrap">
+			<!-- Header -->
+			<header id="header">
+				<div class="container">
+					<!-- Logo -->
+					<h1 class="logo fl">
+						<a href="#">미현 상협</a>
+					</h1>
+					<!-- Navigation -->
+					<div class="cl"></div>
+				</div>
+			</header>
+			
+		<!-- main_section -->
+	<section id="main">
+		<div class="cover"></div>
+		<div class="container">
+			<h2 class="hero-title">내가 너를 왜 좋아할까?<br>미현아</h2>
+			<button type="button" class="btns">알아보기</button>
+		</div>
+	</section>
+	<!-- intro_section -->
+	<section id="intro" class="anim">
+		<div class="container">
+			<div class="animation">
+				<h2 class="hero-title tac"><span class="hlc">우리 미현이</span>는 예뻐요!!<br> 세상에서 제일</h2>
+				<p class="hero-info tac">저는 미현이의 예쁜 외모에 반해서 <br>미현이를 좋아하게 되었습니다.</p>
+			</div>
+			<button type="button" class="btns2 m0auto">진짜에요</button>
+		</div>	
+	</section>
+	<!-- pay_section -->
+	<section id="pay" class="anim">
+		<div class="container">
+			<div class="animation">
+				<h2 class="hero-title tac"><span class="hlc">착해도 너무 착해</span><br>이 시대의 친절녀</h2>
+				<p class="hero-info tac">너무 착해서 반해버렸어요<br>울애깅 오구 착해</p>
+			</div>	
+			<button type="button" class="btns2 m0auto">맛있는거 사주세요</button>
+		</div>	
+	</section>
+	<!-- emp_section -->
+	<section id="emp_pay" class="anim">
+		<div class="container">
+			<div class="animation">
+				<h2 class="hero-title tac"><span class="hlc">뛰어난 패션감각</span><br>옷걸이가 좋아..</h2>
+				<p class="hero-info tac">라이더자켓 입은 그녀.<br>프리티 걸 ㅎㅎ </p>
+			</div>	
+			<div class="emp_pay">
+				<div class="cl"></div>
+			</div>
+			<button type="button" class="btns2 m0auto">자주 입어줘용</button>	
+		</div>	
+	</section>
+	<!-- admin_section -->
+	<section id="admin" class="anim">
+		<div class="container">
+			<div class="animation">
+				<h2 class="hero-title tac"><span class="hlc">깔끔한 남자관계!!</span><br>친구는 여자뿐</h2>
+				<p class="hero-info tac">남사친이 없어서 너무 좋아요<br>없는거 맞지...?</p>
+			</div>	
+			<button type="button" class="btns2 m0auto">남자 검사하기</button>	
+		</div>	
+	</section>
+	<!-- shoplist_section -->
+	<section id="shop_list" class="anim">
+		<div class="container">
+			<div class="animation">
+				<h2 class="hero-title tac"><span class="hlc">이러한 이유들로</span><br>제가 미현이를 좋아해요</h2>
+				<p class="hero-info tac">그러니깐 미현이도 나를 좋아하도록 하자<br> 알겠으면 지금 나한테 뽀뽀해줘</p>
+			</div>	
+			<div class="cl"></div>
+			<button type="button" class="btns2 m0auto">나만 좋아하기</button>	
+		</div>	
+	</section>
+	
+	
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<p class="tac">Copyright &copy; Reserved By sanghyupJeong</p>
+		</div>
+	</footer>
+	</div>
+	<script>
+		// app
+	var app = {
+		datas : {
+			ele :["intro","pay","emp_pay","admin","shop_list"], // animation 될 엘리먼트 ID
+			wst : null, //윈도우 스크롤 탑
+			oft : null, //Intro 오프셋 탑
+		},
+		// 초기화
+		init : function(){
+			app.event(); //이벤트 실행시
+		},
+		event : function(){
+			$(window).scroll(function(e){
+				app.datas.wst = $(this).scrollTop();
+				app.datas.oft = $("#intro").offset().top;
+				app.header_change();
+				app.parallax();
+			});
+
+			$(".btns").click(function(){
+				$('body, html').animate({'scrollTop':300},700);
+			});
+		},
+		// header_change
+		header_change : function(){
+			if( (app.datas.oft - app.datas.wst) <= 300 ){
+				$("header").addClass("fixed");
+			}else{
+				$("header").removeClass("fixed");
+			}
+		},
+		// parallax animation
+		parallax : function(){
+			$(".anim").each(function(i){
+				if($(this).attr("id") == app.datas.ele[i]){
+					var toft = $(this).offset().top - app.datas.wst;
+					if(toft <= 450){
+						$(this).find(".hero-title").animate({"opacity":"1","left":"0px"},300);
+						$(this).find(".hero-info").delay(250).animate({"opacity":"1","left":"0px"});
+					}
+				}
+			});
+		}
+	}
+	// app 실행
+	app.init();
+	</script>	
+</body>
+</html>
